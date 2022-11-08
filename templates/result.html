@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+   <body>
+        <h3> Predicted property price: </h3>
+       <!-- <h4> {{prediction}} </h4> -->
+
+       <table>
+         <thead>
+            <tr>
+               <td>Price</td>
+               <td>Date</td>
+            </tr>
+         </thead>
+         <tbody>
+            {% for predicted_price in prediction.predicted_price %}
+            <tr>
+               <td>{{predicted_price}}</td>
+               <td>{{prediction.date[loop.index-1].strftime("%d %B %Y")}}</td>
+            </tr>
+          {% endfor %}
+         </tbody>
+       </table>
+   </body>
+</html>
